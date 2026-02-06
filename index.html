@@ -6,19 +6,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estética Automotiva 2D</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --laranja: #ff7a18;
+            --laranja-escuro: #e8680d;
+            --preto: #0f0f0f;
+            --cinza: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--preto);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #000, #1a1a1a);
+            padding: 12px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo h1 {
+            color: var(--laranja);
+            font-size: 22px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+
+        nav a {
+            color: #fff;
+            margin-left: 24px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--laranja);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            padding-top: 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding-left: 60px;
+            padding-right: 60px;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero span {
+            color: var(--laranja);
+        }
+
+        .hero p {
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+
+
+        .btn {
+            background: var(--laranja);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--laranja-escuro);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 60px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--laranja);
+        }
+
+        .servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card h4 {
+            color: var(--laranja);
+            margin-bottom: 12px;
+        }
+
+        .servicos-whatsapp {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* SOBRE */
+        .sobre {
+            background: var(--cinza);
+            border-radius: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .sobre img {
+            width: 100%;
+            border-radius: 24px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            color: #aaa;
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer span {
+            color: var(--laranja);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero {
+                text-align: center;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            section {
+                padding: 60px 24px;
+            }
+
+            .sobre {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 42px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Estética Automotiva 2D</h1>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Estética Automotiva 2D">
+            <h1>Estética Automotiva 2D</h1>
+        </div>
+
         <nav>
             <a href="#inicio">Início</a>
             <a href="#servicos">Serviços</a>
@@ -27,18 +251,15 @@
         </nav>
     </header>
 
-    <!-- INÍCIO -->
+
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h2>Seu carro com <span>visual impecável</span></h2>
             <p>Especialistas em estética automotiva premium. Cada detalhe importa.</p>
-            <a href="https://wa.me/5500000000000" target="_blank" class="btn">
-                Agendar pelo WhatsApp
-            </a>
+            <a href="https://wa.me/5500000000000" target="_blank" class="btn">Agendar pelo WhatsApp</a>
         </div>
     </section>
 
-    <!-- SERVIÇOS -->
     <section id="servicos">
         <div class="section-title">
             <h3>Nossos <span>Serviços</span></h3>
@@ -50,46 +271,33 @@
                 <h4>Lavagem Premium</h4>
                 <p>Limpeza detalhada com produtos de alta performance.</p>
             </div>
-
             <div class="card">
                 <h4>Polimento Técnico</h4>
                 <p>Remoção de riscos e brilho profundo da pintura.</p>
             </div>
-
             <div class="card">
                 <h4>Higienização Interna</h4>
                 <p>Limpeza completa de bancos, carpetes e painel.</p>
             </div>
         </div>
 
+        <div class="servicos-whatsapp">
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank"
+                class="btn">Falar no WhatsApp</a>
+        </div>
     </section>
 
-    <!-- SOBRE -->
     <section class="sobre" id="sobre">
         <div>
             <h3>Sobre a <span>Automotiva 2D</span></h3>
-            <p>
-                Trabalhamos com paixão por carros e excelência em cada serviço,
-                entregando resultados que impressionam.
+            <p>Trabalhamos com paixão por carros e excelência em cada serviço, entregando resultados que impressionam.
             </p>
         </div>
-        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Estética Automotiva">
+        <img src="img/logo.png" alt="Estética Automotiva">
     </section>
 
-
-    <!-- CONTATO -->
     <footer id="contato">
-        <!-- BOTÃO WHATSAPP -->
-        <div class="servicos-whatsapp">
-            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank"
-                class="btn whatsapp-btn">
-                Falar no WhatsApp
-            </a>
-        </div>
-        <br>
-        </section>
         <p>© 2026 <span>Estética Automotiva 2D</span> • Todos os direitos reservados</p>
-
     </footer>
 
 </body>
